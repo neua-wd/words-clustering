@@ -1,8 +1,8 @@
 import nltk
 from nltk.corpus import brown
+from nltk import bigrams
 
 tagged_words = brown.tagged_words()
-# tagged_words = [('a', 'NN'), ('b', 'VB'), ('c', 'NN'), ('d', 'AB')]
 
 
 def word_likelihood(word, tag):
@@ -31,5 +31,7 @@ def tag_transition_probability(tag, preceding_tag):
     return tag_follows_count / preceding_tag_count
 
 
-print(word_likelihood('race', 'NN'))
-print(tag_transition_probability('NN', 'VB'))
+# print(word_likelihood('race', 'NN'))
+# print(word_likelihood('race', 'VB'))
+# print(tag_transition_probability('AT', 'NN'))
+print(tag_transition_probability('AT', 'VB'))
